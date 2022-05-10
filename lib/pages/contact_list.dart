@@ -15,7 +15,7 @@ class _ContactListState extends State<ContactList> {
   final _contacts = <Contact>[...contactData];
   int _selectedContactIndex = -1;
 
-  void _setSelectedContact({required Contact contact, required index}) {
+  void _setSelectedContact({required index}) {
     setState(() {
       _selectedContactIndex = index;
     });
@@ -44,7 +44,7 @@ class _ContactListState extends State<ContactList> {
   }
 
   void _goToDetail(Contact contact, int index) {
-    _setSelectedContact(contact: contact, index: index);
+    _setSelectedContact(index: index);
     Navigator.push(context, MaterialPageRoute(
       builder: (context) {
         return ContactDetail(
